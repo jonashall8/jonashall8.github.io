@@ -339,45 +339,47 @@ section .title::after{
 
 
 /* teams section styling */
-.teams .title::after{
-    content: "What I am currently working on";
+/* Projects section */
+.projects {
+    background: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    padding: 80px 0;
+    color: #333;
 }
-.teams .carousel .card{
-    background: #222;
-    border-radius: 6px;
-    padding: 40px 35px;
-    text-align: center;
-    overflow: hidden;
-    transition: all 0.3s ease;
+.projects .title::after {
+    content: "what I've built";
+    background: #f9f9f9;
 }
-.teams .carousel .card:hover{
-    background: rgb(128, 190, 217);
-}
-.teams .carousel .card .box{
+.project-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+    gap: 30px;
 }
-.teams .carousel .card:hover .box{
-    transform: scale(1.05);
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    padding: 25px 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.teams .carousel .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
-.teams .carousel .card img{
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid rgb(128, 190, 217);
-    transition: all 0.3s ease;
+.project-title {
+    font-size: 24px;
+    color: rgb(128, 190, 217);
+    margin-bottom: 10px;
 }
-.teams .carousel .card:hover img{
-    border-color: #fff;
+.project-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.tech-stack {
+    font-size: 14px;
+    color: #777;
+    font-style: italic;
 }
 
 .owl-dots{
