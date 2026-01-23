@@ -109,7 +109,7 @@
             font-weight: 600;
             font-size: 1.1rem;
             color: var(--text-primary);
-            border-bottom: none; /* Remove underline from title */
+            border-bottom: none; 
         }
         
         .project-title:hover {
@@ -120,6 +120,27 @@
             font-size: 0.85rem;
             color: #888;
             font-family: monospace;
+        }
+
+        /* Sortify Image Gallery */
+        .project-gallery {
+            display: flex;
+            gap: 10px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .project-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #eee;
+            transition: transform 0.2s;
+        }
+
+        .project-gallery img:hover {
+            transform: scale(1.02);
         }
 
         /* Footer */
@@ -144,6 +165,10 @@
 
             .project-header {
                 flex-direction: column;
+            }
+
+            .project-gallery img {
+                width: 150px;
             }
         }
     </style>
@@ -178,6 +203,22 @@
             <ul class="project-list">
                 <li class="project-item">
                     <div class="project-header">
+                        <a href="https://github.com/jonashall8/sortify" target="_blank" class="project-title">Sortify</a>
+                        <span class="project-tech">PyTorch / Java / Android</span>
+                    </div>
+                    <p>
+                        An Engineering Capstone project featuring an AI-driven waste classification application. Uses object detection to gamify recycling, encouraging sustainable habits through real-time feedback.
+                    </p>
+                    
+                    <div class="project-gallery">
+                        <img src="images/sortify-1.png" alt="Sortify Interface">
+                        <img src="images/sortify-2.png" alt="Waste Classification AI">
+                        <img src="images/sortify-3.png" alt="User Dashboard">
+                    </div>
+                </li>
+
+                <li class="project-item">
+                    <div class="project-header">
                         <a href="https://github.com/jonashall8/Defence-Hackathon-DroneGuard" target="_blank" class="project-title">DroneGuard</a>
                         <span class="project-tech">Python / TensorFlow / Java</span>
                     </div>
@@ -196,15 +237,6 @@
                     </p>
                 </li>
 
-                <li class="project-item">
-                    <div class="project-header">
-                        <a href="#" class="project-title">High-Frequency Trading Engine</a>
-                        <span class="project-tech">C++ / Low-latency Systems</span>
-                    </div>
-                    <p>
-                        Built a low-latency order matching engine processing high volumes of data. Focused on memory optimization and system stability under load.
-                    </p>
-                </li>
 
                 <li class="project-item">
                     <div class="project-header">
@@ -225,6 +257,5 @@
 
 </body>
 </html>
-
 
 
