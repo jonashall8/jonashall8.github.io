@@ -12,7 +12,7 @@
             --bg-color: #FFFFFF;
             --text-primary: #111111;
             --text-secondary: #555555;
-            --accent-color: #000000; /* Minimalist black accent */
+            --accent-color: #000000;
             --link-hover: #444444;
             --spacing-unit: 1.5rem;
         }
@@ -42,7 +42,6 @@
         }
 
         h2 {
-            font-size: 1.2rem;
             font-weight: 600;
             margin-top: 3rem;
             margin-bottom: 1rem;
@@ -95,14 +94,14 @@
         }
 
         .project-item {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem; /* Increased for better separation */
         }
 
         .project-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
         }
 
         .project-title {
@@ -121,38 +120,43 @@
             color: #888;
             font-family: monospace;
         }
-        
-        /* Fixed Gallery Styles */
-    .project-gallery {
-        display: flex;
-        gap: 10px;
-        margin: 1rem 0;
-        overflow-x: auto;
-        padding-bottom: 10px;
-        /* Ensures the scrollbar doesn't shift the layout */
-        scrollbar-width: thin; 
-    }
 
-    .project-gallery img {
-        width: 200px;
-        height: 140px; /* Fixed height makes the layout consistent across projects */
-        object-fit: cover; /* Prevents stretching if the screenshot aspect ratios differ */
-        border-radius: 6px;
-        border: 1px solid #eee;
-        transition: transform 0.2s;
-        flex-shrink: 0; /* Prevents images from squishing */
-    }
+        /* Gallery Core Styles */
+        .project-gallery {
+            display: flex;
+            gap: 12px;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: thin;
+        }
+
+        /* Standard Multi-Image Styles (Sortify) */
+        .project-gallery img {
+            width: 200px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
 
         .project-gallery img:hover {
             transform: scale(1.02);
+            border-color: #ccc;
         }
 
-    /* Style for a single large image (Sovereign Shield) */
-    .project-gallery.single-image img {
-        width: 100%; /* Makes the single image span the container width */
-        height: auto; /* Maintains natural aspect ratio for the dashboard view */
-        max-height: 400px; /* Prevents it from becoming too tall */
-    }
+        /* Single Dashboard Image Styles (Sovereign Shield) */
+        .project-gallery.single-image {
+            overflow: hidden; /* No scroll needed for one image */
+        }
+
+        .project-gallery.single-image img {
+            width: 100%; /* Spans the full 700px width */
+            height: auto; /* Natural aspect ratio for the dashboard */
+            max-height: 450px;
+        }
 
         /* Footer */
         footer {
@@ -176,10 +180,12 @@
 
             .project-header {
                 flex-direction: column;
+                gap: 4px;
             }
 
             .project-gallery img {
-                width: 150px;
+                width: 160px;
+                height: 110px;
             }
         }
     </style>
@@ -205,13 +211,14 @@
                 I have deep experience in back-end development, particularly with languages such as <strong>Python, C++ and Java</strong>.
             </p>
             <p>
-                Currently, I am excited to continue my growth and development as an engineer and am actively looking for opportunities to gain more hands-on experience in the industry. My interests lie primarily in Finance, and Defence sectors.
+                Currently, I am excited to continue my growth and development as an engineer and am actively looking for opportunities to gain more hands-on experience in the industry. My interests lie primarily in Finance and Defence sectors.
             </p>
         </section>
 
         <section id="projects">
             <h2>Selected Projects</h2>
             <ul class="project-list">
+                
                 <li class="project-item">
                     <div class="project-header">
                         <a href="https://github.com/jonashall8/sortify" target="_blank" class="project-title">Sortify</a>
@@ -228,17 +235,17 @@
                     </div>
                 </li>
 
-                <li class ="project-item">
+                <li class="project-item">
                     <div class="project-header">
                         <a href="https://github.com/jonashall8/sovereign-shield" target="_blank" class="project-title">Sovereign Shield</a>
-                        <span class="project-tech">Java, Neo4j, React</span>
+                        <span class="project-tech">Java / Neo4j / React</span>
                     </div>
                     <p>
                         A Java-based graph platform that maps defence supply chains, calculates sovereignty risk scores, identifies ITAR/export-restricted dependencies, and suggests NATO-aligned or Canadian SME alternatives.
                     </p>
 
-                <div class="project-gallery">
-                        <img src="images/sovereignshield-1.png" alt="PivotSimulator">
+                    <div class="project-gallery single-image">
+                        <img src="images/sovereignshield-1.png" alt="Sovereignty Analysis Dashboard">
                     </div>
                 </li>
 
@@ -262,7 +269,6 @@
                     </p>
                 </li>
 
-
                 <li class="project-item">
                     <div class="project-header">
                         <a href="#" class="project-title">Distributed Systems Monitor</a>
@@ -282,9 +288,6 @@
 
 </body>
 </html>
-
-
-
 
 
 
