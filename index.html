@@ -8,187 +8,156 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --bg-color: #FFFFFF;
-            --text-primary: #111111;
-            --text-secondary: #555555;
-            --accent-color: #000000;
-            --link-hover: #444444;
-            --spacing-unit: 1.5rem;
-        }
+    :root {
+        --bg-color: #FFFFFF;
+        --text-primary: #111111;
+        --text-secondary: #555555;
+        --accent-color: #000000;
+        --link-hover: #444444;
+        --spacing-unit: 1.5rem;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            max-width: 700px; 
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-        }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        line-height: 1.6;
+        max-width: 700px; 
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+    }
 
-        /* Typography */
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-        }
+    /* Typography */
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+    }
 
-        h2 {
-            font-weight: 600;
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
+    h2 {
+        font-weight: 600;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
 
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-        }
+    p {
+        margin-bottom: 1rem;
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+    }
 
-        a {
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: color 0.2s ease;
-            border-bottom: 1px solid #ddd;
-        }
+    a {
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        border-bottom: 1px solid #ddd;
+    }
 
-        a:hover {
-            color: var(--link-hover);
-            border-bottom: 1px solid #000;
-        }
+    a:hover {
+        color: var(--link-hover);
+        border-bottom: 1px solid #000;
+    }
 
-        /* Social Links */
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 3rem;
-        }
+    /* Social Links */
+    .social-links {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 3rem;
+    }
 
-        .social-links a {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            border-bottom: none;
-        }
+    .social-links a {
+        font-size: 1.5rem;
+        color: var(--text-primary);
+        border-bottom: none;
+    }
 
-        .social-links a:hover {
-            color: var(--text-secondary);
-            transform: translateY(-2px);
-        }
+    /* Projects List */
+    .project-item {
+        margin-bottom: 4rem;
+    }
 
-        /* Projects List */
-        .project-list {
-            list-style: none;
-        }
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.5rem;
+    }
 
-        .project-item {
-            margin-bottom: 3rem; /* Increased for better separation */
-        }
+    .project-title {
+        font-weight: 600;
+        font-size: 1.1rem;
+        border-bottom: none; 
+    }
 
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-        }
+    .project-tech {
+        font-size: 0.85rem;
+        color: #888;
+        font-family: monospace;
+    }
 
-        .project-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            border-bottom: none; 
-        }
-        
-        .project-title:hover {
-             text-decoration: underline;
-        }
+    /* Gallery Styles */
+    .project-gallery {
+        display: flex;
+        gap: 12px;
+        margin: 1.5rem 0;
+        overflow-x: auto;
+        padding-bottom: 15px;
+        scrollbar-width: thin;
+    }
 
-        .project-tech {
-            font-size: 0.85rem;
-            color: #888;
-            font-family: monospace;
-        }
+    /* Fix for Sortify (Mobile Screenshots) */
+    .project-gallery img {
+        width: 180px; /* Adjusted width */
+        height: auto; /* Allow natural height to prevent cropping */
+        aspect-ratio: 9 / 19; /* Standard mobile aspect ratio */
+        object-fit: contain; /* Ensures the whole UI is visible */
+        background: #f9f9f9; /* Adds a light background for transparent areas */
+        border-radius: 8px;
+        border: 1px solid #eee;
+        flex-shrink: 0;
+    }
 
-        /* Gallery Core Styles */
-        .project-gallery {
-            display: flex;
-            gap: 12px;
-            margin: 1.5rem 0;
-            overflow-x: auto;
-            padding-bottom: 10px;
-            scrollbar-width: thin;
-        }
+    /* Fix for Sovereign Shield (Full Dashboard) */
+    .project-gallery.single-image {
+        overflow: hidden;
+        display: block; /* Stack instead of flex for full width */
+    }
 
-        /* Standard Multi-Image Styles (Sortify) */
-        .project-gallery img {
-            width: 200px;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #eee;
-            transition: transform 0.2s;
-            flex-shrink: 0;
-        }
+    .project-gallery.single-image img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto; /* Disable the mobile aspect ratio */
+        object-fit: contain;
+        max-height: none; /* Removed the 450px cap */
+    }
 
-        .project-gallery img:hover {
-            transform: scale(1.02);
-            border-color: #ccc;
-        }
+    footer {
+        margin-top: 5rem;
+        border-top: 1px solid #eee;
+        padding-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #888;
+        text-align: center;
+    }
 
-        /* Single Dashboard Image Styles (Sovereign Shield) */
-        .project-gallery.single-image {
-            overflow: hidden; /* No scroll needed for one image */
-        }
-
-        .project-gallery.single-image img {
-            width: 100%; /* Spans the full 700px width */
-            height: auto; /* Natural aspect ratio for the dashboard */
-            max-height: 450px;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 5rem;
-            border-top: 1px solid #eee;
-            padding-top: 1.5rem;
-            font-size: 0.85rem;
-            color: #888;
-            text-align: center;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            body {
-                padding: 2rem 1rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-
-            .project-header {
-                flex-direction: column;
-                gap: 4px;
-            }
-
-            .project-gallery img {
-                width: 160px;
-                height: 110px;
-            }
-        }
-    </style>
+    @media (max-width: 600px) {
+        body { padding: 2rem 1rem; }
+        .project-header { flex-direction: column; gap: 4px; }
+        .project-gallery img { width: 140px; }
+    }
+</style>
 </head>
 <body>
 
@@ -288,6 +257,7 @@
 
 </body>
 </html>
+
 
 
 
