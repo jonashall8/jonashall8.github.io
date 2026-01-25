@@ -121,27 +121,38 @@
             color: #888;
             font-family: monospace;
         }
+        
+        /* Fixed Gallery Styles */
+    .project-gallery {
+        display: flex;
+        gap: 10px;
+        margin: 1rem 0;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        /* Ensures the scrollbar doesn't shift the layout */
+        scrollbar-width: thin; 
+    }
 
-        /* Sortify Image Gallery */
-        .project-gallery {
-            display: flex;
-            gap: 10px;
-            margin: 1rem 0;
-            overflow-x: auto;
-            padding-bottom: 10px;
-        }
-
-        .project-gallery img {
-            width: 200px;
-            height: auto;
-            border-radius: 6px;
-            border: 1px solid #eee;
-            transition: transform 0.2s;
-        }
+    .project-gallery img {
+        width: 200px;
+        height: 140px; /* Fixed height makes the layout consistent across projects */
+        object-fit: cover; /* Prevents stretching if the screenshot aspect ratios differ */
+        border-radius: 6px;
+        border: 1px solid #eee;
+        transition: transform 0.2s;
+        flex-shrink: 0; /* Prevents images from squishing */
+    }
 
         .project-gallery img:hover {
             transform: scale(1.02);
         }
+
+    /* Style for a single large image (Sovereign Shield) */
+    .project-gallery.single-image img {
+        width: 100%; /* Makes the single image span the container width */
+        height: auto; /* Maintains natural aspect ratio for the dashboard view */
+        max-height: 400px; /* Prevents it from becoming too tall */
+    }
 
         /* Footer */
         footer {
@@ -271,6 +282,7 @@
 
 </body>
 </html>
+
 
 
 
