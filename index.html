@@ -84,6 +84,10 @@
     }
 
     /* Projects List */
+    .project-list {
+        list-style: none;
+    }
+
     .project-item {
         margin-bottom: 4rem;
     }
@@ -119,28 +123,28 @@
 
     /* Fix for Sortify (Mobile Screenshots) */
     .project-gallery img {
-        width: 180px; /* Adjusted width */
-        height: auto; /* Allow natural height to prevent cropping */
-        aspect-ratio: 9 / 19; /* Standard mobile aspect ratio */
-        object-fit: contain; /* Ensures the whole UI is visible */
-        background: #f9f9f9; /* Adds a light background for transparent areas */
+        width: 180px; 
+        height: auto; 
+        aspect-ratio: 9 / 19; 
+        object-fit: contain; 
+        background: #f9f9f9; 
         border-radius: 8px;
         border: 1px solid #eee;
         flex-shrink: 0;
     }
 
-    /* Fix for Sovereign Shield (Full Dashboard) */
+    /* Fix for Single Images (Full Dashboard/Architecture) */
     .project-gallery.single-image {
         overflow: hidden;
-        display: block; /* Stack instead of flex for full width */
+        display: block; 
     }
 
     .project-gallery.single-image img {
         width: 100%;
         height: auto;
-        aspect-ratio: auto; /* Disable the mobile aspect ratio */
+        aspect-ratio: auto; 
         object-fit: contain;
-        max-height: none; /* Removed the 450px cap */
+        max-height: none; 
     }
 
     footer {
@@ -157,13 +161,13 @@
         .project-header { flex-direction: column; gap: 4px; }
         .project-gallery img { width: 140px; }
     }
-</style>
+    </style>
 </head>
 <body>
 
     <header>
         <h1>Jonas Hallgrimsson</h1>
-        <p>Software Engineering Student & Backend Developer</p>
+        <p>Software Engineer | C++ Systems, Cloud & Applied AI</p>
         
         <div class="social-links">
             <a href="mailto:jonashall8@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -176,11 +180,10 @@
         <section id="about">
             <h2>About</h2>
             <p>
-                I am a 4th year Software Engineering student at Carleton University with a keen interest in cloud and systems engineering. 
-                I have deep experience in back-end development, particularly with languages such as <strong>Python, C++ and Java</strong>.
+                I am a 4th-year Software Engineering student at Carleton University specializing in high-performance C++ systems, cloud infrastructure, and applied AI.
             </p>
             <p>
-                Currently, I am excited to continue my growth and development as an engineer and am actively looking for opportunities to gain more hands-on experience in the industry. My interests lie primarily in Finance and Defence sectors.
+                I am passionate about solving complex, domain-specific challenges across diverse technology sectors. I thrive on building responsive, scalable architecture—whether that involves engineering autonomous simulation models for aerospace, developing tooling for AAA game development, or provisioning secure infrastructure for the defense sector.
             </p>
         </section>
 
@@ -190,11 +193,34 @@
                 
                 <li class="project-item">
                     <div class="project-header">
-                        <a href="https://github.com/jonashall8/sortify" target="_blank" class="project-title">Sortify</a>
-                        <span class="project-tech">PyTorch / Java / Android</span>
+                        <a href="https://github.com/jonashall8/orbital-pursuit" target="_blank" class="project-title">OrbitalPursuit</a>
+                        <span class="project-tech">C++ / Aerospace / 3D Math</span>
                     </div>
                     <p>
-                        An Engineering Capstone project featuring an AI-driven waste classification application. Uses object detection to gamify recycling, encouraging sustainable habits through real-time feedback.
+                        A real-time autonomous spacecraft simulation engine engineered in C++17, optimized to run on resource-constrained hardware (Raspberry Pi Zero 2 W). Implements complex mathematical models including Clohessy-Wiltshire relative orbital mechanics, quaternion-based attitude control, and a custom Stefan-Boltzmann thermal simulation, visualized through an interactive Three.js frontend.
+                    </p>
+                    <div class="project-gallery single-image">
+                        <img src="images/orbitalpursuit-1.png" alt="OrbitalPursuit Simulation Architecture">
+                    </div>
+                </li>
+
+                <li class="project-item">
+                    <div class="project-header">
+                        <a href="#" class="project-title">Planetary Robotics Mission Control Dashboard</a>
+                        <span class="project-tech">C++ / Qt / Telemetry</span>
+                    </div>
+                    <p>
+                        Architected a cross-platform Mission Control dashboard using C++ and the Qt Framework for deployment in simulated rover missions. Developed a highly responsive graphical user interface to parse, process, and visualize real-time hardware telemetry and 3D data streams via low-latency network communication protocols.
+                    </p>
+                </li>
+
+                <li class="project-item">
+                    <div class="project-header">
+                        <a href="https://github.com/jonashall8/sortify" target="_blank" class="project-title">Sortify — Edge AI Waste Classification</a>
+                        <span class="project-tech">C++ / Computer Vision / Mobile</span>
+                    </div>
+                    <p>
+                        An Engineering Capstone project featuring a high-performance, on-device Computer Vision pipeline. Deploys quantized PyTorch object detection models (YOLOv8m) optimized for real-time inference latency. Backed by a hybrid cloud architecture using Google Firebase and AWS Cognito enabling a scalable user experience.
                     </p>
                     
                     <div class="project-gallery">
@@ -207,10 +233,10 @@
                 <li class="project-item">
                     <div class="project-header">
                         <a href="https://github.com/jonashall8/sovereign-shield" target="_blank" class="project-title">Sovereign Shield</a>
-                        <span class="project-tech">Java / Neo4j / React</span>
+                        <span class="project-tech">Java / Neo4j / LLMs</span>
                     </div>
                     <p>
-                        A Java-based graph platform that maps defence supply chains, calculates sovereignty risk scores, identifies ITAR/export-restricted dependencies, and suggests NATO-aligned or Canadian SME alternatives.
+                        A graph-based supplier risk model using Neo4j to analyze multi-tier dependency relationships in the defense supply chain. Integrates a locally hosted LLM pipeline (LangChain4j + Ollama) to securely parse classified supplier documents with zero external data transfer, visualized via a React-based scenario simulator.
                     </p>
 
                     <div class="project-gallery single-image">
@@ -221,22 +247,22 @@
                 <li class="project-item">
                     <div class="project-header">
                         <a href="https://github.com/jonashall8/Defence-Hackathon-DroneGuard" target="_blank" class="project-title">DroneGuard</a>
-                        <span class="project-tech">Python / TensorFlow / Java</span>
+                        <span class="project-tech">Python / Java / Docker</span>
                     </div>
                     <p>
-                        A hybrid AI-powered acoustic detection system designed to identify and classify UAS in real-time. Built for the Ottawa Defence Hackathon 2025 using a microservices architecture.
+                        A modular, real-time acoustic threat detection pipeline for Class 1 UAS drones built for the Ottawa Defence Hackathon. Containerized with Docker and features automated GitHub Actions CI/CD pipelines, improving cross-platform portability and rapid deployment to AWS environments.
                     </p>
                 </li>
 
                 <li class="project-item">
                     <div class="project-header">
                         <a href="https://github.com/jonashall8/forge-template" target="_blank" class="project-title">Project Forge</a>
-                        <span class="project-tech">Terraform / Kubernetes / Java</span>
+                        <span class="project-tech">Terraform / Kubernetes / AWS</span>
                     </div>
                     <p>
-                        A production-ready cloud infrastructure framework designed to provision secure AWS network architectures and Kubernetes clusters using infrastructure-as-code. Integrates centralized logging and metrics on Linux to support resilient, observable distributed system deployments.                    </p>
+                        A production-ready cloud infrastructure framework designed to provision secure AWS network architectures and Kubernetes (EKS) clusters. Automates the deployment of complex networking, containerized microservices, and centralized logging using infrastructure-as-code. 
+                    </p>
                 </li>
-
                 
             </ul>
         </section>
@@ -248,9 +274,6 @@
 
 </body>
 </html>
-
-
-
 
 
 
